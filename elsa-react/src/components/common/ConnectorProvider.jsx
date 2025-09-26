@@ -6,7 +6,7 @@
 
 import {useShapeContext} from "@/components/DefaultRoot.jsx";
 import {useEffect, useRef} from "react";
-import {connector, DIRECTION} from "@fit-elsa/elsa-core";
+import {connector, DIRECTION} from "@fit-elsa/elsa";
 import {CONNECTOR} from "@/common/Consts.js";
 import PropTypes from "prop-types";
 

@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import {jadeNode} from "@/components/base/jadeNode.jsx";
-import {DIRECTION} from "@fit-elsa/elsa-core";
+import {DIRECTION} from "@fit-elsa/elsa";
 import {NODE_STATUS, SECTION_TYPE, VIRTUAL_CONTEXT_NODE} from "@/common/Consts.js";
 import {conditionNodeDrawer} from "@/components/condition/conditionNodeDrawer.jsx";
 import {ConditionNodeConnectorValidator, FormValidator} from '@/components/base/validator.js';

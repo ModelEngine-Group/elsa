@@ -6,7 +6,7 @@
 
 import {jadeNode} from '@/components/base/jadeNode.jsx';
 import './style.css';
-import {DIRECTION} from '@fit-elsa/elsa-core';
+import {DIRECTION} from '@fit-elsa/elsa';
 import {SECTION_TYPE} from '@/common/Consts.js';
 import {endNodeDrawer} from '@/components/end/endNodeDrawer.jsx';
 import {EndNodeConnectorValidator, FormValidator} from '@/components/base/validator.js';

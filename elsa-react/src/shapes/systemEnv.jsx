@@ -4,7 +4,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {rectangle} from '@fit-elsa/elsa-core';
+import {rectangle} from '@fit-elsa/elsa';
 import {DATA_TYPES, VIRTUAL_CONTEXT_NODE, VIRTUAL_CONTEXT_NODE_VARIABLES} from '@/common/Consts.js';
 import {emptyStatusManager} from '@/components/base/emptyStatusManager.js';
 

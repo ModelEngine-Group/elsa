@@ -45,3 +45,6 @@ export * from "../../plugins/flowable/aippFlowEntry.js";
 export * from "../../plugins/flowable/nodes/node.js";
 
 export * from "../../plugins/flowable/hitregions/hitregion.js";
+
+// i18n resources
+export { en, zh } from '../../i18n/i18n.js';

@@ -17,7 +17,7 @@ import {EditorToolbar} from '@/components/note/EditorToolBar.jsx';
 import PropTypes from 'prop-types';
 import {TOOL_BAR_SIZE} from '@/components/note/const.js';
 import {ResizeButton} from '@/components/note/ResizeButton.jsx';
-import {EVENT_TYPE, isPointInRect} from '@fit-elsa/elsa-core';
+import {EVENT_TYPE, isPointInRect} from '@fit-elsa/elsa';
 
 /**
  * 文本编辑组件

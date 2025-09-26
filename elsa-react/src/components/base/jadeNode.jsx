@@ -4,7 +4,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {node} from '@fit-elsa/elsa-core';
+import {node} from '@fit-elsa/elsa';
 import {v4 as uuidv4} from 'uuid';
 import {NODE_STATUS, SECTION_TYPE, SOURCE_PLATFORM, VIRTUAL_CONTEXT_NODE} from '@/common/Consts.js';
 import {jadeNodeDrawer} from '@/components/base/jadeNodeDrawer.jsx';

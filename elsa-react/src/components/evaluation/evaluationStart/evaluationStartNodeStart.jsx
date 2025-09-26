@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import {evaluationStartNodeDrawer} from "@/components/evaluation/evaluationStart/evaluationStartNodeDrawer.jsx";
-import {DIRECTION} from "@fit-elsa/elsa-core";
+import {DIRECTION} from "@fit-elsa/elsa";
 import {evaluationNode} from "@/components/evaluation/evaluationNode.jsx";
 
 /**

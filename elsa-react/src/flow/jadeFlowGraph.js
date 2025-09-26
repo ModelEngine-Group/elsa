@@ -4,7 +4,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {defaultGraph} from '@fit-elsa/elsa-core';
+import {defaultGraph} from '@fit-elsa/elsa';
 import {jadeFlowPage} from '@/flow/jadeFlowPage.js';
 import {jadeEvent} from '@/components/jadeEvent.jsx';
 import {taskNode} from '@/components/testDemo/taskNode.jsx';

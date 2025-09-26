@@ -4,7 +4,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {isPointInRect, line, LINEMODE} from '@fit-elsa/elsa-core';
+import {isPointInRect, line, LINEMODE} from '@fit-elsa/elsa';
 import {emptyStatusManager} from '@/components/base/emptyStatusManager.js';
 
 /**

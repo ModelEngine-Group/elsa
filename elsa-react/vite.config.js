@@ -20,17 +20,17 @@ export default defineConfig({
     build: {
         lib: {
             entry: 'src/index.js',
-            name: 'elsa-react',
-            filename: (format) => `elsa-react.${format}.js`
+            name: 'agent-flow',
+            filename: (format) => `agent-flow.${format}.js`
         },
         sourcemap: true,
         rollupOptions: {
-            external: ['react', 'react-dom', '@fit-elsa/elsa-core', 'antd', 'axios', '@monaco-editor/react'],
+            external: ['react', 'react-dom', '@fit-elsa/elsa', 'antd', 'axios', '@monaco-editor/react'],
             output: {
                 globals: {
                     react: 'react',
                     'react-dom': 'ReactDOM',
-                    '@fit-elsa/elsa-core': '@fit-elsa/elsa-core',
+                    '@fit-elsa/elsa': '@fit-elsa/elsa',
                     '@monaco-editor/react': '@monaco-editor/react',
                 },
                 inlineDynamicImports: true, // 确保 worker 内联

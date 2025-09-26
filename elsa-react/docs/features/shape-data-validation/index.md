@@ -1,4 +1,4 @@
-# <center>Elsa-React中节点表单的校验</center>
+# <center>agent-flow中节点表单的校验</center>
 
 ------
 
@@ -12,11 +12,11 @@
 
 ## 方案设计
 
-由于应用导入后所依赖的插件、模型、知识库、表单等信息需要查询接口获取。并且错误信息在进入应用页面，还未进入编排页面时就需要进行展示，此时elsa-react还未被加载。以上信息的存储位置是elsa-react定义，因此提取逻辑也应由elsa-react完成才合适。
+由于应用导入后所依赖的插件、模型、知识库、表单等信息需要查询接口获取。并且错误信息在进入应用页面，还未进入编排页面时就需要进行展示，此时agent-flow还未被加载。以上信息的存储位置是agent-flow定义，因此提取逻辑也应由agent-flow完成才合适。
 
 基于以上背景，设计校验流程如下：
 
-1.前端获取到graph后调用elsa-react提供对json格式的graph单独提取校验信息的接口，此接口不需要加载流程。
+1.前端获取到graph后调用agent-flow提供对json格式的graph单独提取校验信息的接口，此接口不需要加载流程。
 
 2.前端获取到需要校验的信息后，调用后端接口对信息进行校验。
 
@@ -37,7 +37,7 @@
 ```plantuml
 actor AppDeveloper
 participant "frontend" as FR
-participant "elsa-react" as ER
+participant "agent-flow" as ER
 participant "backend" as BA
 
 AppDeveloper -> FR : import App
@@ -161,7 +161,7 @@ deactivate AppDeveloper
 
 ```plantuml
 participant "frontend" as FR
-participant "elsa-react" as ER
+participant "agent-flow" as ER
 
 FR -> ER : Transfer validateInfo and refresh function
 activate FR
@@ -251,7 +251,7 @@ const normalDataValidationProcessor = (shape) => {
 
 ```plantuml
 actor AppDeveloper
-participant "elsa-react" as ER
+participant "agent-flow" as ER
 participant "ShapeBorderColor" as SBC
 
 AppDeveloper -> ER : shape onblur
@@ -275,7 +275,7 @@ deactivate SBC
 
 ```plantuml
 actor AppDeveloper
-participant "elsa-react" as ER
+participant "agent-flow" as ER
 participant "ShapeBorderColor" as SBC
 
 AppDeveloper -> ER : Change data

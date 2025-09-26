@@ -10,7 +10,7 @@ import './contentStyle.css';
 import {Form} from 'antd';
 import {CloseOutlined} from '@ant-design/icons';
 import {useUpdateEffect} from '@/components/common/UseUpdateEffect.jsx';
-import {EVENT_TYPE} from '@fit-elsa/elsa-core';
+import {EVENT_TYPE} from '@fit-elsa/elsa';
 import PropTypes from 'prop-types';
 import {SYSTEM_ACTION} from '@/common/Consts.js';
 

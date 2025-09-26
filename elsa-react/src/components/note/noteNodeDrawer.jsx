@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import {jadeNodeDrawer} from '@/components/base/jadeNodeDrawer.jsx';
-import {isPointInRect} from '@fit-elsa/elsa-core';
+import {isPointInRect} from '@fit-elsa/elsa';
 
 /**
  * 注释节点绘制器

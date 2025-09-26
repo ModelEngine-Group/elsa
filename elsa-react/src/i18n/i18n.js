@@ -8,8 +8,7 @@ import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import en from './en_US.json';
 import zh from './zh_CN.json';
-import coreEn from '@fit-elsa/elsa-core/locales/en.json';
-import coreZh from '@fit-elsa/elsa-core/locales/zh.json';
+import { en as coreEn, zh as coreZh } from '@fit-elsa/elsa';
 
 const mergeTranslations = (local, core) => {
   return { ...core, ...local }; // core 的翻译作为基础，本地翻译优先级更高

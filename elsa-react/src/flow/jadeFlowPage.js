@@ -4,7 +4,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {copyPasteHelper, ElsaCopyHandler, page, PAGE_OPERATION_MODE, shapeDataHelper, sleep, uuid} from '@fit-elsa/elsa-core';
+import {copyPasteHelper, ElsaCopyHandler, page, PAGE_OPERATION_MODE, shapeDataHelper, sleep, uuid} from '@fit-elsa/elsa';
 import {SYSTEM_ACTION, VIRTUAL_CONTEXT_NODE} from '@/common/Consts.js';
 import {conditionRunner, inactiveNodeRunner, standardRunner} from '@/flow/runners.js';
 import {message} from 'antd';

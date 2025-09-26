@@ -4,7 +4,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {DIRECTION} from "@fit-elsa/elsa-core";
+import {DIRECTION} from "@fit-elsa/elsa";
 import {CONNECTOR} from "@/common/Consts.js";
 
 /**

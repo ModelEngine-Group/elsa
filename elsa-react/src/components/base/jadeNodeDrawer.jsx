@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import ReactDOM from 'react-dom/client';
-import {isPointInRect, rectangleDrawer} from '@fit-elsa/elsa-core';
+import {isPointInRect, rectangleDrawer} from '@fit-elsa/elsa';
 import React, {useRef, useState} from 'react';
 import {NODE_STATUS} from '@';
 import RunningStatusPanel from '@/components/flowRunComponent/RunningStatusPanel.jsx';

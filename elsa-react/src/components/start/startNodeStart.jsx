@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import {jadeNode} from "@/components/base/jadeNode.jsx";
-import {DIRECTION} from "@fit-elsa/elsa-core";
+import {DIRECTION} from "@fit-elsa/elsa";
 import "./style.css";
 import {SECTION_TYPE} from "@/common/Consts.js";
 import {startNodeDrawer} from "@/components/start/startNodeDrawer.jsx";

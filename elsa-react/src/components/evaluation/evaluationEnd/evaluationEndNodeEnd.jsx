@@ -7,7 +7,7 @@
 import {evaluationNode} from "@/components/evaluation/evaluationNode.jsx";
 import {evaluationEndComponent} from "@/components/evaluation/evaluationEnd/evaluationEndComponent.jsx";
 import {evaluationEndNodeDrawer} from "@/components/evaluation/evaluationEnd/evaluationEndNodeDrawer.jsx";
-import {DIRECTION} from "@fit-elsa/elsa-core";
+import {DIRECTION} from "@fit-elsa/elsa";
 import {SECTION_TYPE} from "@/common/Consts.js";
 import {EndNodeConnectorValidator, FormValidator} from '@/components/base/validator.js';
 
