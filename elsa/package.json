@@ -9,9 +9,9 @@
   "private": false,
   "module": "build/elsa.js",
   "scripts": {
-    "replace": "powershell -Command \"(Get-Content -Path 'build/elsa.js') -replace '__webpack_exports__(\\w+)', '\\1' | Set-Content -Path 'build/elsa.js'\"",
-    "replace:ict": "powershell -Command \"(Get-Content -Path 'build/view.js') -replace '__webpack_exports__(\\w+)', '\\1' | Set-Content -Path 'build/view.js'\"",
-    "cp:json": "powershell -Command \"Copy-Item -Path 'package.json' -Destination './build/package.json' -Force\"",
+    "replace": "sed -i 's/__webpack_exports__\\([a-zA-Z0-9]\\+\\)/\\1/g' build/elsa.js",
+    "replace:ict": "sed -i 's/__webpack_exports__\\([a-zA-Z0-9]\\+\\)/\\1/g' build/view.js",
+    "cp:json": "cp package.json ./build/package.json",
     "compile": "cross-env NODE_ENV=daily webpack --progress --color --config webpack.config.js",
     "compile:debug": "cross-env NODE_ENV=daily MODE=debug webpack --progress --color --config webpack.config.js",
     "compile:ict": "webpack --progress --color --config webpack.config-ict.js",
