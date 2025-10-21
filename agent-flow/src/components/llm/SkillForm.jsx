@@ -170,7 +170,7 @@ export const SkillContent = ({toolOptions, disabled, dispatch, t}) => {
       const endpoint = config?.urls?.endpoint || window.location.origin;
       
       // 构建跳转 URL
-      const targetUrl = `${endpoint}/app-develop/${tenantId}/add-flow/${appId}?type=workFlow`;
+      const targetUrl = `${endpoint}/#/app-develop/${tenantId}/add-flow/${appId}?type=workFlow`;
       
       // 在新标签页中打开
       window.open(targetUrl, '_blank');

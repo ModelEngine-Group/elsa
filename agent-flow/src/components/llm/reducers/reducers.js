@@ -544,6 +544,8 @@ export const UpdateToolsReducer = () => {
           updatedTool.name = actionItem.name || updatedTool.name;
           updatedTool.tags = actionItem.tags || updatedTool.tags;
           updatedTool.version = actionItem.version || updatedTool.version;
+          updatedTool.appId = actionItem.appId || updatedTool.appId;
+          updatedTool.tenantId = actionItem.tenantId || updatedTool.tenantId;
         }
         return updatedTool;
       }),

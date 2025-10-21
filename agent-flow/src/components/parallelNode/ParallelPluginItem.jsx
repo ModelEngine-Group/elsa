@@ -89,19 +89,21 @@ const _ParallelPluginItem = ({plugin, handlePluginDelete, shapeStatus}) => {
       const endpoint = config?.urls?.endpoint || window.location.origin;
       
       // 构建跳转 URL
-      const targetUrl = `${endpoint}/app-develop/${tenantId}/add-flow/${appId}?type=workFlow`;
+      const targetUrl = `${endpoint}/#/app-develop/${tenantId}/add-flow/${appId}?type=workFlow`;
       
       // 在新标签页中打开
       window.open(targetUrl, '_blank');
     }
   };
 
-  const renderViewIcon = () => {
+  const hasViewIcon = () => {
     const appId = plugin?.value?.find(item => item.name === 'appId')?.value;
     const tenantId = plugin?.value?.find(item => item.name === 'tenantId')?.value;
-    
-    // 只有当存在 appId 和 tenantId 时才显示眼睛图标
-    if (!appId || !tenantId) {
+    return !!(appId && tenantId);
+  };
+
+  const renderViewIcon = () => {
+    if (!hasViewIcon()) {
       return null;
     }
     
@@ -109,7 +111,7 @@ const _ParallelPluginItem = ({plugin, handlePluginDelete, shapeStatus}) => {
       <Button disabled={shapeStatus.disabled}
               type='text'
               className='icon-button'
-              style={{height: '100%', padding: '0 4px'}}
+              style={{height: '100%', marginLeft: 'auto', padding: '0 4px'}}
               onClick={handleViewDetails}
               title={t('toolDetails')}>
         <EyeOutlined/>
@@ -118,11 +120,19 @@ const _ParallelPluginItem = ({plugin, handlePluginDelete, shapeStatus}) => {
   };
 
   const renderDeleteIcon = (id, outputName) => {
+    // 如果没有眼睛图标，删除图标需要 marginLeft: 'auto' 来推到右侧
+    // 如果有眼睛图标，眼睛图标已经有了 marginLeft: 'auto'，删除图标不需要
+    const deleteIconStyle = {
+      height: '100%',
+      padding: '0 4px',
+      ...(hasViewIcon() ? {} : {marginLeft: 'auto'})
+    };
+    
     return (<>
       <Button disabled={shapeStatus.disabled}
               type="text"
               className="icon-button"
-              style={{height: '100%', marginLeft: 'auto', padding: '0 4px'}}
+              style={deleteIconStyle}
               onClick={() => {
                 handlePluginDelete(id, outputName);
                 deregisterObservables();
