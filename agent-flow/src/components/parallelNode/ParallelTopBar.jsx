@@ -42,7 +42,12 @@ const _ParallelTopBar = ({handlePluginAdd, disabled}) => {
       });
     });
     entity.outputParams = [convertReturnFormat(selectedData.schema.return)];
-    handlePluginAdd(entity, selectedData.uniqueName, selectedData.name, selectedData.tags);
+    
+    // 提取 appId 和 tenantId
+    const appId = selectedData.runnables?.APP?.appId;
+    const tenantId = selectedData.schema?.parameters?.properties?.tenantId?.default;
+    
+    handlePluginAdd(entity, selectedData.uniqueName, selectedData.name, selectedData.tags, appId, tenantId);
   };
 
   const triggerSelect = (e) => {

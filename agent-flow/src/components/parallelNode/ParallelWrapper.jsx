@@ -41,13 +41,15 @@ const ParallelWrapper = ({shapeStatus}) => {
     });
   }, [data?.outputParams]);
 
-  const handlePluginAdd = (entity, uniqueName, name, tags) => {
+  const handlePluginAdd = (entity, uniqueName, name, tags, appId, tenantId) => {
     dispatch({
       type: 'addPluginByMetaData',
       entity: entity,
       uniqueName: uniqueName,
       pluginName: name,
       tags: tags,
+      appId: appId,
+      tenantId: tenantId,
     });
   };
 

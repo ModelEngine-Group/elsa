@@ -87,7 +87,14 @@ export const AddSkillReducer = () => {
     if (toolUniqueNames.includes(action.value) || workflowUniqueNames.includes(action.value)) {
       return newConfig;
     }
-    const newSkill = {id: uuidv4(), type: 'String', from: 'Input', value: action.value};
+    const newSkill = {
+      id: uuidv4(),
+      type: 'String',
+      from: 'Input',
+      value: action.value,
+      appId: action.appId,
+      tenantId: action.tenantId,
+    };
     const newTools = {...tools, value: [...tools.value, newSkill]};
     replaceTool(newConfig, newTools, 'tools');
     return newConfig;

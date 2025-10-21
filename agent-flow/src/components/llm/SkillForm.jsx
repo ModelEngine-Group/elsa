@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import {Button, Collapse, Form, Row} from 'antd';
-import {PlusOutlined} from '@ant-design/icons';
+import {PlusOutlined, EyeOutlined} from '@ant-design/icons';
 import {useDispatch, useShapeContext} from '@/components/DefaultRoot.jsx';
 import '../common/style.css';
 import PropTypes from 'prop-types';
@@ -50,10 +50,19 @@ const _SkillForm = ({toolOptions, disabled}) => {
   /**
    * 选择工具后的回调
    *
-   * @param data 目前是uniqueName
+   * @param data 选择的工具数据
    */
   const onSelect = (data) => {
-    dispatch({type: 'addSkill', value: data});
+    // 提取 appId 和 tenantId
+    const appId = data.runnables?.APP?.appId;
+    const tenantId = data.schema?.parameters?.properties?.tenantId?.default;
+    
+    dispatch({
+      type: 'addSkill',
+      value: data.uniqueName || data,
+      appId: appId,
+      tenantId: tenantId,
+    });
   };
 
   return (
@@ -142,6 +151,57 @@ export const SkillContent = ({toolOptions, disabled, dispatch, t}) => {
   };
 
   /**
+   * 查看工具详情
+   *
+   * @param item 条目，具体是一个工具的对象
+   */
+  const handleViewDetails = (e, item) => {
+    e.preventDefault();
+    e.stopPropagation(); // 阻止事件冒泡
+    
+    // 获取 appId 和 tenantId
+    const appId = item.appId;
+    const tenantId = item.tenantId;
+    
+    // 如果有 appId 和 tenantId，则跳转到工具流详情页
+    if (appId && tenantId) {
+      // 获取 endpoint 配置
+      const config = shape?.graph?.configs?.find(node => node.node === 'llmNodeState');
+      const endpoint = config?.urls?.endpoint || window.location.origin;
+      
+      // 构建跳转 URL
+      const targetUrl = `${endpoint}/app-develop/${tenantId}/add-flow/${appId}?type=workFlow`;
+      
+      // 在新标签页中打开
+      window.open(targetUrl, '_blank');
+    }
+  };
+
+  /**
+   * 渲染查看详情按钮
+   *
+   * @param item 条目，具体是一个工具的对象
+   * @returns {React.JSX.Element} 查看详情按钮
+   */
+  const renderViewIcon = (item) => {
+    // 只有当存在 appId 和 tenantId 时才显示眼睛图标
+    if (!item.appId || !item.tenantId) {
+      return null;
+    }
+    
+    return (<>
+      <Button disabled={disabled}
+              type='text'
+              className='icon-button'
+              style={{padding: '0 4px'}}
+              onClick={(e) => handleViewDetails(e, item)}
+              title={t('toolDetails')}>
+        <EyeOutlined/>
+      </Button>
+    </>);
+  };
+
+  /**
    * 渲染删除按钮
    *
    * @param item 条目，具体是一个工具的对象
@@ -204,6 +264,7 @@ export const SkillContent = ({toolOptions, disabled, dispatch, t}) => {
                       <span className={'tool-version-font'}>{item.version}</span>
                     </div>
                   </div>
+                  {renderViewIcon(item)}
                   {renderDeleteIcon(item)}
                 </div>
               </Row>

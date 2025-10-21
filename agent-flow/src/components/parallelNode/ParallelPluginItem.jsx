@@ -8,7 +8,7 @@ import {Button, Collapse, Form} from 'antd';
 import {useDataContext, useShapeContext} from '@/components/DefaultRoot.jsx';
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {MinusCircleOutlined} from '@ant-design/icons';
+import {MinusCircleOutlined, EyeOutlined} from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import {InvokeOutput} from '@/components/common/InvokeOutput.jsx';
 import {InvokeInput} from '@/components/common/InvokeInput.jsx';
@@ -74,6 +74,49 @@ const _ParallelPluginItem = ({plugin, handlePluginDelete, shapeStatus}) => {
     }
   };
 
+  const handleViewDetails = (e) => {
+    e.preventDefault();
+    e.stopPropagation(); // 阻止事件冒泡
+    
+    // 获取 appId 和 tenantId
+    const appId = plugin?.value?.find(item => item.name === 'appId')?.value;
+    const tenantId = plugin?.value?.find(item => item.name === 'tenantId')?.value;
+    
+    // 如果有 appId 和 tenantId，则跳转到工具流详情页
+    if (appId && tenantId) {
+      // 获取 endpoint 配置
+      const config = shape?.graph?.configs?.find(node => node.node === 'parallelNodeState');
+      const endpoint = config?.urls?.endpoint || window.location.origin;
+      
+      // 构建跳转 URL
+      const targetUrl = `${endpoint}/app-develop/${tenantId}/add-flow/${appId}?type=workFlow`;
+      
+      // 在新标签页中打开
+      window.open(targetUrl, '_blank');
+    }
+  };
+
+  const renderViewIcon = () => {
+    const appId = plugin?.value?.find(item => item.name === 'appId')?.value;
+    const tenantId = plugin?.value?.find(item => item.name === 'tenantId')?.value;
+    
+    // 只有当存在 appId 和 tenantId 时才显示眼睛图标
+    if (!appId || !tenantId) {
+      return null;
+    }
+    
+    return (<>
+      <Button disabled={shapeStatus.disabled}
+              type='text'
+              className='icon-button'
+              style={{height: '100%', padding: '0 4px'}}
+              onClick={handleViewDetails}
+              title={t('toolDetails')}>
+        <EyeOutlined/>
+      </Button>
+    </>);
+  };
+
   const renderDeleteIcon = (id, outputName) => {
     return (<>
       <Button disabled={shapeStatus.disabled}
@@ -116,6 +159,7 @@ const _ParallelPluginItem = ({plugin, handlePluginDelete, shapeStatus}) => {
             className="jade-panel"
             header={<div style={{display: 'flex', alignItems: 'center'}}>
               <span className="jade-panel-header-font">{plugin?.value?.find(item => item.name === 'outputName')?.value ?? ''}</span>
+              {renderViewIcon()}
               {renderDeleteIcon(plugin.id, outputName)}
             </div>}
             key="parallelPanel">

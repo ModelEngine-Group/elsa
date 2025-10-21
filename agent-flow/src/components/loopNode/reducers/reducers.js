@@ -46,7 +46,9 @@ export const ChangePluginByMetaDataReducer = () => {
         uniqueName: action.uniqueName,
         return: { type: 'array' },
         pluginName: action.pluginName,
-        tags: action.tags
+        tags: action.tags,
+        appId: action.appId,
+        tenantId: action.tenantId,
       };
     };
 

@@ -117,6 +117,9 @@ export default function LlmFormWrapper({data, shapeStatus}) {
       const responseMap = new Map(responseData.map(item => [item.uniqueName, item]));
 
       const toolOptions = uniqueNameList.map(uniqueName => {
+        // 从 tool.value 中找到对应的 toolItem，获取 appId 和 tenantId
+        const toolItem = tool.value.find(t => t.value === uniqueName);
+        
         if (responseMap.has(uniqueName)) {
           const item = responseMap.get(uniqueName);
           return {
@@ -125,16 +128,20 @@ export default function LlmFormWrapper({data, shapeStatus}) {
             tags: item.tags,
             version: item.version,
             value: item.uniqueName,
+            appId: toolItem?.appId,
+            tenantId: toolItem?.tenantId,
           };
         } else {
           // 若请求返回体中没有该 uniqueName 或请求失败，则从 toolItem 中获取信息
-          const fallbackItem = tool.value.find(toolItem => toolItem.value === uniqueName);
+          const fallbackItem = toolItem;
           return fallbackItem ? {
             id: fallbackItem.id,
             name: fallbackItem.name || 'Unknown',
             tags: fallbackItem.tags || [],
             version: fallbackItem.version || 'Unknown',
             value: fallbackItem.value,
+            appId: fallbackItem.appId,
+            tenantId: fallbackItem.tenantId,
           } : null;
         }
       }).filter(Boolean); // 过滤掉 null 值

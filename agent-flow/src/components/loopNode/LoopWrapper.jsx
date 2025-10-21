@@ -29,13 +29,15 @@ const LoopWrapper = ({shapeStatus}) => {
   const filterArgs = isWaterFlow ? args.find(arg => arg.name === 'inputParams')?.value ?? args : args;
   const filterRadioValue = isWaterFlow && radioValue ? radioValue.replace(/^inputParams\./, '') : radioValue;
 
-  const handlePluginChange = (entity, uniqueName, name, tags) => {
+  const handlePluginChange = (entity, uniqueName, name, tags, appId, tenantId) => {
     dispatch({
       type: 'changePluginByMetaData',
       entity: entity,
       uniqueName: uniqueName,
       pluginName: name,
       tags: tags,
+      appId: appId,
+      tenantId: tenantId,
     });
   };
 
@@ -48,7 +50,12 @@ const LoopWrapper = ({shapeStatus}) => {
   /**
    * 组装插件对象。
    */
-  const plugin = {name: toolInfo?.pluginName ?? undefined, id: toolInfo?.uniqueName ?? undefined};
+  const plugin = {
+    name: toolInfo?.pluginName ?? undefined,
+    id: toolInfo?.uniqueName ?? undefined,
+    appId: toolInfo?.appId ?? undefined,
+    tenantId: toolInfo?.tenantId ?? undefined,
+  };
 
   return (<>
     <div>

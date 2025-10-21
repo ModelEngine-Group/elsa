@@ -87,6 +87,18 @@ export const AddPluginByMetaDataReducer = () => {
         type: DATA_TYPES.ARRAY,
         from: FROM_TYPE.INPUT,
         value: action.tags,
+      }, {
+        id: uuidv4(),
+        name: 'appId',
+        type: DATA_TYPES.STRING,
+        from: FROM_TYPE.INPUT,
+        value: action.appId,
+      }, {
+        id: uuidv4(),
+        name: 'tenantId',
+        type: DATA_TYPES.STRING,
+        from: FROM_TYPE.INPUT,
+        value: action.tenantId,
       }],
     };
 
