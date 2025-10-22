@@ -1,9 +1,10 @@
 {
-  "name": "@fit-elsa/elsa-core",
-  "version": "1.0.0-source",
+  "name": "@fit-elsa/elsa",
+  "version": "1.0.2",
   "main": "build/elsa.js",
   "files": [
-    "build"
+    "build",
+    "i18n"
   ],
   "private": false,
   "module": "build/elsa.js",

@@ -12,7 +12,7 @@
 
     - 支持图形拖拽和画布拖拽，并提供节点整理和一键显示所有节点的能力
 
-### 前端应用 (elsa-react)
+### 前端应用 (agent-flow)
 
 - **集成React能力**
 
@@ -28,7 +28,7 @@
 ### 1. 分层架构
 
 ```markdown
-├─ elsa-react/    # React前端应用
+├─ agent-flow/    # React前端应用
 │  └─ src/        # 前端源代码
 └─ elsa/          # 核心框架
    ├─ common/     # 通用工具
@@ -38,7 +38,7 @@
 
 ### 2. 技术栈
 
-### **@elsa/elsa-core（核心框架模块）**
+### **@elsa/elsa（核心框架模块）**
 
 #### **核心工具链**
 | 类别        | 技术栈                                          |
@@ -54,7 +54,7 @@
 | **国际化**   | `i18next@21.6`（多语言支持）                          |
 | **视频处理**  | `video.js@8.9`（视频播放器集成）                        |
 
-### @elsa/elsa-react（React 前端模块）
+### @elsa/agent-flow（React 前端模块）
 #### **核心框架**
 | 类别          | 技术栈                                       |
 | ----------- | ----------------------------------------- |
@@ -74,7 +74,7 @@
 | ------------- | ---------------------------------------------------------------------- |
 | **编辑器**      | `monaco-editor@0.34`（代码编辑器） +`@tinymce/tinymce-react@4.3`（注释节点富文本编辑器） |
 | **HTTP 客户端** | `axios@1.8`（API 请求）                                                    |
-| **核心依赖**     | `@elsa/elsa-core`（本地路径引用）                                          |
+| **核心依赖**     | `@fit-elsa/elsa`（本地路径引用）                                          |
 
 ## 快速开始
 
@@ -96,8 +96,8 @@ npm i
 # 编译构建
 npm run build
 
-# 进入elsa-react目录
-cd ../elsa-react
+# 进入agent-flow目录
+cd ../agent-flow
 
 # 安装依赖
 npm i
@@ -105,6 +105,6 @@ npm i
 # 编译构建
 npm run build
 
-#启动 fit-elsa-react
+#启动 fit-agent-flow
 npm run dev
 ```
