@@ -1,7 +1,7 @@
 {
   "name": "@fit-elsa/agent-flow",
   "private": false,
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "type": "module",
   "main": "./build/agent-flow.js",
   "module": "./build/agent-flow.js",
