@@ -12,9 +12,9 @@ import VariableUpdate from '../asserts/icon-variable-update.svg?react'; // å¯¼å…
  *
  * @override
  */
-export const variableUpdateDrawer = (shape, div, x, y) => {
+export const variableUpdaterDrawer = (shape, div, x, y) => {
   const self = jadeNodeDrawer(shape, div, x, y);
-  self.type = 'variableUpdateDrawer';
+  self.type = 'variableUpdaterDrawer';
 
   /**
    * @override

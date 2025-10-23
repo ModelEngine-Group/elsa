@@ -60,7 +60,7 @@ const isVariablesEqual = (prevProps, nextProps) => {
   return true;
 };
 
-export const VariableUpdateInputForm = React.memo(_VariableUpdateInputForm, areEqual);
+export const VariableUpdaterInputForm = React.memo(_VariableUpdateInputForm, areEqual);
 
 /**
  * 变量条目.
