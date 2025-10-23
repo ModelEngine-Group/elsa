@@ -54,6 +54,11 @@ function App({i18n}) {
       },
     });
     configs.push({
+      node: 'replyNodeState', urls: {
+        testCodeUrl: '',
+      },
+    });
+    configs.push({
       node: 'evaluationAlgorithmsNodeState', urls: {
         evaluationAlgorithmsUrl: '',
       },
