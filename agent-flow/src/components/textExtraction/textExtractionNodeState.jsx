@@ -38,7 +38,7 @@ export const textExtractionNodeState = (id, x, y, width, height, parent, drawer)
    * @returns {{}|*} 需要展示的输入信息
    */
   self.getInputData = () => {
-    return {text: self.input?.extractParam?.text} ?? {};
+    return {text: self.input?.extractParam?.text};
   };
 
   return self;
