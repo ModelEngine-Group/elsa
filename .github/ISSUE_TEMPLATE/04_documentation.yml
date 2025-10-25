@@ -1,0 +1,167 @@
+name: 📚 文档问题 / Documentation Issue
+description: 报告文档中的错误、缺失或改进建议 / Report documentation errors, missing content, or improvement suggestions
+assignees:
+  - CodeCasterX
+labels: 
+  - "type: documentation"
+  - "status: waiting-for-triage"
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 感谢您帮助改进文档！/ Thank you for helping improve the documentation!
+        
+        好的文档对项目至关重要。请详细描述文档问题，帮助我们提供更好的文档体验。
+        Good documentation is crucial for the project. Please describe the documentation issue in detail to help us provide a better documentation experience.
+        
+  - type: input
+    id: summary
+    attributes:
+      label: 问题摘要 / Issue Summary
+      description: 用一句话简要描述文档问题 / Briefly describe the documentation issue in one sentence
+      placeholder: |
+        例如：API文档中缺少参数说明
+        Example: Missing parameter description in API documentation
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: 文档类型 / Documentation Type
+      description: 这个问题涉及哪种类型的文档？/ Which type of documentation does this issue involve?
+      options:
+        - "README文件 / README file"
+        - "API文档 / API Documentation"
+        - "安装指南 / Installation Guide"
+        - "使用教程 / Usage Tutorial"
+        - "配置说明 / Configuration Guide"
+        - "故障排除 / Troubleshooting"
+        - "贡献指南 / Contributing Guide"
+        - "更新日志 / Changelog"
+        - "代码注释 / Code Comments"
+        - "其他 (请在下方说明) / Other (please specify below)"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: 问题类型 / Issue Type
+      description: 这是什么类型的文档问题？/ What type of documentation issue is this?
+      options:
+        - "内容错误 / Content Error"
+        - "信息缺失 / Missing Information"
+        - "过时内容 / Outdated Content"
+        - "格式问题 / Formatting Issue"
+        - "链接失效 / Broken Link"
+        - "翻译问题 / Translation Issue"
+        - "结构改进 / Structure Improvement"
+        - "示例代码问题 / Example Code Issue"
+        - "其他 / Other"
+    validations:
+      required: true
+      
+  - type: input
+    id: location
+    attributes:
+      label: 文档位置 / Document Location
+      description: |
+        请提供具体的文档位置信息
+        Please provide specific document location information
+      placeholder: |
+        例如：docs/api.md 第15行，或者 README.md 的"安装"部分
+        Example: Line 15 in docs/api.md, or "Installation" section in README.md
+    validations:
+      required: true
+      
+  - type: textarea
+    id: current-content
+    attributes:
+      label: 当前内容 / Current Content
+      description: |
+        复制粘贴当前有问题的文档内容（如果适用）
+        Copy and paste the current problematic documentation content (if applicable)
+      placeholder: |
+        请粘贴当前的文档内容...
+        Please paste the current documentation content...
+      render: markdown
+      
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: 问题描述 / Issue Description
+      description: |
+        详细描述文档问题
+        Describe the documentation issue in detail
+      placeholder: |
+        详细说明问题所在... / Explain the issue in detail...
+        
+        例如 / Example:
+        - 这段文档与实际功能不符
+        - This documentation doesn't match the actual functionality
+        - 缺少必要的参数说明
+        - Missing necessary parameter descriptions
+    validations:
+      required: true
+      
+  - type: textarea
+    id: suggested-content
+    attributes:
+      label: 建议的内容 / Suggested Content
+      description: |
+        如果您有改进建议，请提供修正后的内容
+        If you have improvement suggestions, please provide the corrected content
+      placeholder: |
+        建议的文档内容... / Suggested documentation content...
+      render: markdown
+      
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影响范围 / Impact
+      description: |
+        这个文档问题对用户有什么影响？
+        What impact does this documentation issue have on users?
+      placeholder: |
+        这个问题可能导致... / This issue might cause...
+        
+        例如 / Example:
+        - 用户无法正确配置功能
+        - Users cannot configure the feature correctly
+        - 开发者集成时遇到困难
+        - Developers encounter difficulties during integration
+        
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 额外信息 / Additional Context
+      description: |
+        添加任何其他有助于改进文档的信息，如截图、相关链接等
+        Add any other information that might help improve the documentation, such as screenshots, related links, etc.
+      
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: 确认事项 / Confirmations
+      description: |
+        提交前请确认以下事项
+        Please confirm the following before submitting
+      options:
+        - label: |
+            我已经搜索了现有的文档相关issues，确认这不是重复问题
+            I have searched existing documentation-related issues and confirmed this is not a duplicate
+          required: true
+        - label: |
+            我已经仔细阅读了相关的文档内容
+            I have carefully read the relevant documentation content
+          required: true
+        - label: |
+            我提供的信息准确完整
+            The information I provided is accurate and complete
+          required: true
+        - label: |
+            我愿意协助改进文档内容 (可选)
+            I'm willing to help improve the documentation content (optional)
+          required: false

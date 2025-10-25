@@ -1,0 +1,105 @@
+name: ❓ 问题咨询 / Question
+description: 询问使用相关的问题 / Ask usage-related questions
+assignees:
+  - CodeCasterX
+labels: 
+  - "type: feature"
+  - "status: waiting-for-internal-feedback"
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 提问前请先查看 / Please check before asking
+        
+        - 📚 项目文档 / Documentation
+        - ❓ 常见问题 / FAQ
+        - 💬 [讨论区 / Discussions](https://github.com/ModelEngine-Group/fit-framework/discussions)
+        
+        如果文档中没有找到答案，请详细描述您的问题。
+        If you can't find the answer in the documentation, please describe your question in detail.
+        
+  - type: input
+    id: summary
+    attributes:
+      label: 问题摘要 / Question Summary
+      description: |
+        简要描述您的问题
+        Briefly describe your question
+      placeholder: |
+        例如：如何配置数据库连接？
+        Example: How to configure database connection?
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: category
+    attributes:
+      label: 问题类别 / Question Category
+      description: |
+        您的问题属于哪个类别？
+        Which category does your question belong to?
+      options:
+        - 安装配置 / Installation & Configuration
+        - 使用教程 / Usage Tutorial
+        - "API相关 / API Related"
+        - 故障排除 / Troubleshooting
+        - 最佳实践 / Best Practices
+        - 性能相关 / Performance Related
+        - 集成问题 / Integration Issues
+        - 其他 / Other
+    validations:
+      required: true
+      
+  - type: textarea
+    id: question
+    attributes:
+      label: 详细问题 / Detailed Question
+      description: |
+        详细描述您遇到的问题，包括：
+        - 您想要实现什么
+        - 您尝试了什么方法
+        - 遇到了什么困难
+        
+        Describe your problem in detail, including:
+        - What you want to achieve
+        - What methods you tried
+        - What difficulties you encountered
+      placeholder: |
+        我想要... / I want to...
+        我尝试了... / I tried...
+        但是遇到了... / But I encountered...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: context
+    attributes:
+      label: 环境信息 / Environment Information
+      description: |
+        提供相关的环境信息 / Provide relevant environment information
+      placeholder: |
+        - 操作系统 / OS: (例如 Windows 11, macOS 13, Ubuntu 20.04)
+        - 浏览器版本 / Browser: (例如 Chrome 118, Firefox 119)
+        - 项目版本 / Project Version: (例如 v1.2.3)
+        - 其他相关信息 / Other relevant info:
+        
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 确认事项 / Checklist
+      description: |
+        提交前请确认 / Please confirm before submitting
+      options:
+        - label: |
+            我已经查看了项目文档
+            I have read the project documentation
+          required: true
+        - label: |
+            我已经搜索了相关 issues 和讨论
+            I have searched related issues and discussions
+          required: true
+        - label: |
+            我已经尝试了基本的故障排除步骤
+            I have tried basic troubleshooting steps
+          required: true

@@ -1,0 +1,162 @@
+name: 🐛 问题报告 / Bug Report
+description: 报告项目中的错误或问题 / Report bugs or issues in the project
+assignees:
+  - CodeCasterX
+labels: 
+  - "type: bug"
+  - "status: waiting-for-triage"
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 感谢您提交问题报告！/ Thank you for submitting a bug report!
+        
+        请尽可能详细地描述问题，这将帮助我们更快地定位和修复问题。
+        Please describe the issue in as much detail as possible to help us locate and fix it faster.
+        
+  - type: input
+    id: summary
+    attributes:
+      label: 问题摘要 / Issue Summary
+      description: 用一句话简要描述这个问题 / Briefly describe this bug in one sentence
+      placeholder: |
+        例如：用户登录后页面显示空白
+        Example: Page shows blank after user login
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: version
+    attributes:
+      label: 版本信息 / Version Information
+      description: 您使用的是哪个版本？/ Which version are you using?
+      options:
+        - "v3.5.3"
+        - "elsa-v0.4.2"
+        - "其他 (请在下方说明) / Other (please specify below)"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: browser
+    attributes:
+      label: 浏览器 / Browser
+      description: 在哪个浏览器中发现了这个问题？/ In which browser did you encounter this issue?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - "Microsoft Edge"
+        - Opera
+        - "其他 (请在下方说明) / Other (please specify below)"
+        
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统 / Operating System
+      description: 您使用的操作系统 / Your operating system
+      options:
+        - "Windows 11"
+        - "Windows 10"
+        - "macOS (Intel)"
+        - "macOS (Apple Silicon)"
+        - "Ubuntu/Debian"
+        - "Other Linux"
+        - HarmonyOS
+        - "其他 (请在下方说明) / Other (please specify below)"
+        
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 发生了什么？/ What happened?
+      description: |
+        详细描述问题的现象
+        Describe the bug phenomenon in detail
+      placeholder: |
+        告诉我们您看到了什么！
+        Tell us what you saw!
+        
+        例如 / Example:
+        - 点击登录按钮后，页面没有任何反应
+        - After clicking the login button, the page does not respond
+    validations:
+      required: true
+      
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望的行为 / Expected Behavior
+      description: |
+        描述您期望发生什么
+        Describe what you expected to happen
+      placeholder: |
+        告诉我们您期望看到什么！
+        Tell us what you expected to see!
+        
+        例如 / Example:
+        - 点击登录按钮后应该跳转到用户 dashboard 页面
+        - After clicking login button, should redirect to user dashboard page
+    validations:
+      required: true
+      
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重现步骤 / Steps to Reproduce
+      description: |
+        如何重现这个问题？
+        How to reproduce this issue?
+      placeholder: |
+        1. 进入页面 '...' / Go to page '...'
+        2. 点击 '....' / Click on '....'
+        3. 滚动到 '....' / Scroll to '....'
+        4. 看到错误 / See error
+    validations:
+      required: true
+      
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志 / Relevant Logs
+      description: |
+        请复制粘贴任何相关的日志输出、错误信息或控制台输出
+        Please copy and paste any relevant log output, error messages, or console output
+        
+        这将自动格式化为代码块，无需使用反引号
+        This will be automatically formatted as code block, no need for backticks
+      render: shell
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 额外信息 / Additional Context
+      description: |
+        添加任何其他有助于解决问题的信息，如截图、相关链接等
+        Add any other information that might help solve the issue, such as screenshots, related links, etc.
+      
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认事项 / Confirmations
+      description: |
+        提交前请确认以下事项
+        Please confirm the following before submitting
+      options:
+        - label: |
+            我已经搜索了现有的issues，确认这不是重复问题
+            I have searched existing issues and confirmed this is not a duplicate
+          required: true
+        - label: |
+            我已经阅读了项目文档和 FAQ
+            I have read the project documentation and FAQ  
+          required: true
+        - label: |
+            我提供的信息准确完整
+            The information I provided is accurate and complete
+          required: true
+        - label: |
+            我愿意协助测试问题修复 (可选)
+            I'm willing to help test the bug fix (optional)
+          required: false

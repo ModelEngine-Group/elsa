@@ -1,0 +1,149 @@
+name: 🔧 其他问题 / Other Issues
+description: 报告不属于上述分类的其他问题或建议 / Report other issues or suggestions that don't fit the above categories
+assignees:
+  - CodeCasterX
+labels: 
+  - "status: waiting-for-triage"
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 提交其他类型的问题 / Submit Other Types of Issues
+        
+        如果您的问题不属于问题报告、问题咨询、功能请求或文档问题，请使用此模板。
+        If your issue doesn't belong to bug reports, questions, feature requests or documentation issues, please use this template.
+        
+        **在提交前，请确认您的问题确实不属于以下类别：**
+        **Before submitting, please confirm your issue doesn't belong to the following categories:**
+        - 🐛 [问题报告 / Bug Report](./issues/new?template=01_bug_report.yml) - 项目功能错误
+        - ❓ [问题咨询 / Question](./issues/new?template=02_question.yml) - 使用相关问题
+        - ✨ [功能请求 / Feature Request](./issues/new?template=03_feature_request.yml) - 新功能建议
+        - 📚 [文档问题 / Documentation](./issues/new?template=04_documentation.yml) - 文档相关问题
+        
+  - type: input
+    id: summary
+    attributes:
+      label: 问题摘要 / Issue Summary
+      description: 用一句话简要描述您的问题或建议 / Briefly describe your issue or suggestion in one sentence
+      placeholder: |
+        例如：建议添加GitHub Actions工作流
+        Example: Suggest adding GitHub Actions workflow
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: category
+    attributes:
+      label: 问题类别 / Issue Category
+      description: 请选择最接近的问题类别 / Please select the closest issue category
+      options:
+        - "项目管理 / Project Management"
+        - "开发工具 / Development Tools"
+        - "CI/CD相关 / CI/CD Related"
+        - "安全相关 / Security Related"
+        - "许可证问题 / License Issues"
+        - "社区建议 / Community Suggestions"
+        - "第三方集成 / Third-party Integration"
+        - "环境配置 / Environment Setup"
+        - "版本发布 / Release Management"
+        - "其他 (请在描述中说明) / Other (please specify in description)"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级 / Priority
+      description: 您认为这个问题的重要程度如何？/ How important do you think this issue is?
+      options:
+        - "高 - 影响项目正常运行 / High - Affects normal project operation"
+        - "中 - 有一定影响 / Medium - Has some impact"
+        - "低 - 优化改进建议 / Low - Optimization/improvement suggestion"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: 详细描述 / Detailed Description
+      description: |
+        详细描述您的问题、建议或需求
+        Describe your issue, suggestion, or requirement in detail
+      placeholder: |
+        请详细说明... / Please explain in detail...
+        
+        包括但不限于 / Including but not limited to:
+        - 问题的背景和原因 / Background and reasons for the issue
+        - 具体的需求或建议 / Specific requirements or suggestions
+        - 对项目的影响 / Impact on the project
+        - 您认为的解决方案 / Your proposed solution
+    validations:
+      required: true
+      
+  - type: textarea
+    id: context
+    attributes:
+      label: 相关背景 / Related Context
+      description: |
+        提供任何相关的背景信息
+        Provide any relevant background information
+      placeholder: |
+        相关信息... / Related information...
+        
+        例如 / Example:
+        - 相关的外部工具或服务 / Related external tools or services  
+        - 类似项目的实现方式 / Implementation approaches in similar projects
+        - 相关的讨论或文章链接 / Links to relevant discussions or articles
+        
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影响评估 / Impact Assessment
+      description: |
+        这个问题或建议会对项目产生什么影响？
+        What impact would this issue or suggestion have on the project?
+      placeholder: |
+        可能的影响... / Potential impacts...
+        
+        例如 / Example:
+        - 对开发流程的影响 / Impact on development workflow
+        - 对用户体验的影响 / Impact on user experience  
+        - 对项目维护的影响 / Impact on project maintenance
+        
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 补充信息 / Additional Information
+      description: |
+        添加任何其他有用的信息，如截图、链接、参考资料等
+        Add any other useful information such as screenshots, links, references, etc.
+      
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: 确认事项 / Confirmations  
+      description: |
+        提交前请确认以下事项
+        Please confirm the following before submitting
+      options:
+        - label: |
+            我已经确认这个问题不属于Bug报告、功能请求、问题咨询或文档问题
+            I have confirmed this issue doesn't belong to bug reports, feature requests, questions, or documentation issues
+          required: true
+        - label: |
+            我已经搜索了现有的issues，确认这不是重复问题
+            I have searched existing issues and confirmed this is not a duplicate
+          required: true
+        - label: |
+            我提供的信息清晰准确
+            The information I provided is clear and accurate
+          required: true
+        - label: |
+            我理解这类问题可能需要更多时间来评估和处理
+            I understand this type of issue may require more time to evaluate and process
+          required: true
+        - label: |
+            我愿意提供更多信息或协助解决 (可选)
+            I'm willing to provide more information or help resolve the issue (optional)
+          required: false
