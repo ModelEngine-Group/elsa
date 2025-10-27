@@ -29,7 +29,7 @@ export default function ByConversationTurn({propValue, onValueChange, disabled, 
     const shape = useShapeContext && useShapeContext();
 
     const defaultRecalls = {
-        1: '1', [3]: i18n('default'), 10: '10'
+        1: '1', [3]: i18n('default'), 20: '20'
     };
 
     // 注册开始节点轮次数.
@@ -54,7 +54,7 @@ export default function ByConversationTurn({propValue, onValueChange, disabled, 
         <div style={{display: 'flex', alignItems: 'center'}}>
             <Slider style={{width: '95%'}} // 设置固定宽度
                     min={1}
-                    max={10}
+                    max={20}
                     disabled={disabled}
                     defaultValue={3}
                     marks={defaultRecalls}
