@@ -30,13 +30,13 @@ jobs:
           node-version: '20.16'
 
       - name: Build elsa
-        working-directory: ./elsa/elsa
+        working-directory: ./elsa
         run: |
           npm install
           npm run build
 
       - name: Build agent-flow
-        working-directory: ./elsa/agent-flow
+        working-directory: ./agent-flow
         run: |
           npm install
           npm run build
