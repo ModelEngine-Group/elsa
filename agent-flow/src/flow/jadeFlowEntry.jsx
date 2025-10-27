@@ -359,7 +359,7 @@ const jadeFlowAgent = (graph) => {
    * @param shapeId 需要聚焦到的图形id.
    */
   self.scrollToShape = (shapeId) => {
-    graph.activePage.shapes.find(s => s.id === shapeId).toScreenCenter();
+    graph.activePage.sm.shapes.find(s => s.id === shapeId).toScreenCenter();
   };
 
   /**
