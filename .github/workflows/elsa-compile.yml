@@ -7,14 +7,12 @@ on:
       - 'elsa-[0-9]+\.[0-9]+\.x'  # 转义小数点，匹配如 elsa-0.1.x
     paths:
       - 'elsa/**'
-      - 'agent-flow/**'
   pull_request:
     branches:
       - 'main'
       - 'elsa-[0-9]+\.[0-9]+\.x'  # 转义小数点，匹配如 elsa-0.1.x
     paths:
       - 'elsa/**'
-      - 'agent-flow/**'
 
 jobs:
   build:
@@ -31,12 +29,6 @@ jobs:
 
       - name: Build elsa
         working-directory: ./elsa
-        run: |
-          npm install
-          npm run build
-
-      - name: Build agent-flow
-        working-directory: ./agent-flow
         run: |
           npm install
           npm run build

@@ -33,12 +33,7 @@
 
 ## 发布流程
 
-ELSA 项目包含两个模块，发布时需要按照以下顺序进行：
-
-1. **首先发布 @fit-elsa/elsa**（核心框架模块）
-2. **然后发布 @fit-elsa/agent-flow**（React前端应用模块）
-
-这是因为 agent-flow 依赖于 elsa，确保依赖的模块先发布可以避免版本冲突。
+1. **发布 @fit-elsa/elsa**（核心框架模块）
 
 ## 使用发布脚本
 
@@ -46,22 +41,6 @@ ELSA 项目包含两个模块，发布时需要按照以下顺序进行：
 
 1. 打开命令行终端
 2. 导航到 elsa 目录
-3. 执行以下命令：
-   ```bash
-   # 安装依赖
-   npm install
-   
-   # 构建项目
-   npm run build
-   
-   # 发布到 npm（确保已登录且有发布权限）
-   npm publish --access public
-   ```
-
-### 直接发布 @fit-elsa/agent-flow
-
-1. 打开命令行终端
-2. 导航到 agent-flow 目录
 3. 执行以下命令：
    ```bash
    # 安装依赖
