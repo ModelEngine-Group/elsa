@@ -12,24 +12,11 @@
 
     - 支持图形拖拽和画布拖拽，并提供节点整理和一键显示所有节点的能力
 
-### 前端应用 (agent-flow)
-
-- **集成React能力**
-
-    - 基于Context的上下文传递
-    - 节点渲染缓存：React.memo + 自定义shouldComponentUpdate
-- **集成Ant Design能力**
-
-    - 基于Form组件的实时校验提示系统
-    - 基于Tree组件封装的节点上下文观察者机制
-
 
 ## 🚀 核心架构概览
 ### 1. 分层架构
 
 ```markdown
-├─ agent-flow/    # React前端应用
-│  └─ src/        # 前端源代码
 └─ elsa/          # 核心框架
    ├─ common/     # 通用工具
    ├─ core/       # 工作流运行时引擎
@@ -54,28 +41,6 @@
 | **国际化**   | `i18next@21.6`（多语言支持）                          |
 | **视频处理**  | `video.js@8.9`（视频播放器集成）                        |
 
-### @elsa/agent-flow（React 前端模块）
-#### **核心框架**
-| 类别          | 技术栈                                       |
-| ----------- | ----------------------------------------- |
-| **前端框架**   | React 18 + TypeScript（隐式依赖）               |
-| **状态管理**   | 原生 React Hooks（未显式引入 Redux）               |
-| **UI 组件库** | Ant Design@4.24 +`@ant-design/icons@5.3` |
-
-#### **开发工具链**
-| 类别        | 技术栈                                        |
-| --------- | ------------------------------------------ |
-| **构建工具** | Vite@5（替代 Webpack） +`vite-plugin-react@4` |
-| **代码规范** | ESLint +`react-hooks`/`refresh`插件        |
-| **特殊集成** | `vite-plugin-svgr`（SVG 转 React 组件）         |
-
-#### **关键功能依赖**
-| 类别            | 技术栈                                                                    |
-| ------------- | ---------------------------------------------------------------------- |
-| **编辑器**      | `monaco-editor@0.34`（代码编辑器） +`@tinymce/tinymce-react@4.3`（注释节点富文本编辑器） |
-| **HTTP 客户端** | `axios@1.8`（API 请求）                                                    |
-| **核心依赖**     | `@fit-elsa/elsa`（本地路径引用）                                          |
-
 ## 快速开始
 
 所需要的环境：
@@ -95,16 +60,4 @@ npm i
 
 # 编译构建
 npm run build
-
-# 进入agent-flow目录
-cd ../agent-flow
-
-# 安装依赖
-npm i
-
-# 编译构建
-npm run build
-
-#启动 fit-agent-flow
-npm run dev
 ```
